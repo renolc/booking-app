@@ -38,7 +38,15 @@ func main() {
 		isValidTicketCount := userTickets > 0 && userTickets <= remainingTickets
 
 		if !isValidName || !isValidEmail || !isValidTicketCount {
-			fmt.Println("Your input data is incorrect, please try again")
+			if !isValidName {
+				fmt.Println("First or last name entered are too short")
+			}
+			if !isValidEmail {
+				fmt.Println("Email must contain @ symbol")
+			}
+			if !isValidTicketCount {
+				fmt.Println("Number of tickets is invalid")
+			}
 			continue
 		}
 
